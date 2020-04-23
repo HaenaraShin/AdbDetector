@@ -10,12 +10,26 @@ class AdbDetector(private val mContext : Context) {
     /**
      * USB연결을 감지하는 필터를 등록하고
      */
-    fun registerAdbDetectReceiver(listener: OnAdbDebugListener? = null) {
+    fun registerAdbDetectReceiver(listener: OnAdbUsbListener? = null) {
         // USB 연결을 감지하는 필터를 등록
         val filter = IntentFilter()
         filter.addAction("android.hardware.usb.action.USB_STATE")
-        mContext.registerReceiver(UsbDebugDetectReceiver(listener), filter)
+        val receiver = UsbDebugDetectReceiver(listener)
+        mContext.registerReceiver(receiver, filter)
+        lastListener = receiver
     }
+
+    /**
+     * USB연결을 감지하는 필터를 등록하고
+     */
+    fun unregisterAdbDetectReceiver() {
+        // USB 연결을 감지하는 필터를 등록
+        lastListener?.let{
+            mContext.unregisterReceiver(lastListener)
+        }
+    }
+
+
     /**
     * USB연결 정책 위반 여부 확인
     * USB 연결 여부, USB디버깅설정 여부 모두 true 면 true
@@ -55,5 +69,9 @@ class AdbDetector(private val mContext : Context) {
             mContext.registerReceiver(null, IntentFilter("android.hardware.usb.action.USB_STATE"))
         return intent != null && intent.extras != null &&
             intent.extras!!.getBoolean("connected")
+    }
+
+    companion object {
+        var lastListener : UsbDebugDetectReceiver? = null
     }
 }

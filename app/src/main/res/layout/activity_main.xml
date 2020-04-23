@@ -9,10 +9,57 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btnDefault"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="When ADB USB connected,"
+        android:layout_marginBottom="20dip"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        />
+
+    <Button
+        android:id="@+id/btnDefault"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/btnCustom"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="EXIT APP"
+        />
+
+    <Button
+        android:id="@+id/btnCustom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/btnDefault"
+        app:layout_constraintBottom_toBottomOf="@id/btnDefault"
+        app:layout_constraintLeft_toRightOf="@id/btnDefault"
+        app:layout_constraintRight_toRightOf="parent"
+        android:text="SHOWS TEXT"
+        />
+
+    <TextView
+        android:id="@+id/tvHead"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dip"
+        app:layout_constraintTop_toBottomOf="@id/btnDefault"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/tvState"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        android:text="STATE : "/>
+
+    <TextView
+        android:id="@+id/tvState"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/tvHead"
+        app:layout_constraintLeft_toRightOf="@id/tvHead"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        android:text="Disconnected"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

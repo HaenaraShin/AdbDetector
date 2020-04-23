@@ -1,6 +1,5 @@
 package dev.haenara.adbdetector
 
-import android.content.DialogInterface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
