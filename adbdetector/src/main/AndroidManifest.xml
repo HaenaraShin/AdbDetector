@@ -3,7 +3,10 @@
     package="dev.haenara.adbdetector">
 
     <application>
-        <activity android:name=".EmptyActivity"></activity>
+        <activity
+            android:name=".EmptyActivity"
+            android:theme="@style/ErrorTransParentTheme"
+            android:launchMode="singleTop"/>
     </application>
 
 </manifest>

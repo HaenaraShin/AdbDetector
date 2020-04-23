@@ -8,11 +8,20 @@ import android.provider.Settings
 
 class AdbDetector(private val mContext : Context) {
     /**
+     * USB연결을 감지하는 필터를 등록하고
+     */
+    fun registerAdbDetectReceiver(listener: OnAdbDebugListener? = null) {
+        // USB 연결을 감지하는 필터를 등록
+        val filter = IntentFilter()
+        filter.addAction("android.hardware.usb.action.USB_STATE")
+        mContext.registerReceiver(UsbDebugDetectReceiver(listener), filter)
+    }
+    /**
     * USB연결 정책 위반 여부 확인
     * USB 연결 여부, USB디버깅설정 여부 모두 true 면 true
     * @return
     */
-    fun checkUSBDebugingMode(): Boolean {
+    fun checkUsbDebuggingMode(): Boolean {
         return isDebugEnable() and isUsbConnected()
     }
 
