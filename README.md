@@ -14,6 +14,12 @@ To check it statically, use checkUsbDebuggingMode function.
 
 **⚠️ADB Detector cannot check ADB itself or ADB via WiFi.⚠️**
 
+# Sample Run
+
+![Sample run](sample_run.gif)
+
+Sample app shows how ADB Detector works.
+
 # Licences
 
 ```
