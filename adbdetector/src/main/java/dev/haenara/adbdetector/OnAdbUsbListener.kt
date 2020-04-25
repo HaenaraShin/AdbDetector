@@ -4,11 +4,11 @@ import android.content.Context
 
 interface OnAdbUsbListener {
     /**
-     * ADB USB가 연결 되었을 때 처리
+     * When USB debugging is enabled and usb is connected.
      */
     fun onAdbUsbConnected(context : Context)
     /**
-     * ADB USB가 분리 되었을 때 처리
+     * When USB debugging is not enabled or usb is disconnected.
      */
     fun onAdbUsbDisconnected(context : Context)
 }

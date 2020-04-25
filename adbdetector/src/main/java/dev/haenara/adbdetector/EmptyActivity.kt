@@ -5,6 +5,10 @@ import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
 import kotlin.system.exitProcess
 
+/**
+ * An empty activity with a simple dialog
+ * that kills application process.
+ */
 class EmptyActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">adbdetector</string>
     <string name="adb_detect_error_title">ADB Detector</string>
-    <string name="adb_detect_error_message">USB가 연결되었습니다.\n디버깅 방지를 위해 앱을 강제 종료합니다.</string>
-    <string name="adb_detect_error_confirm">확인</string>
+    <string name="adb_detect_error_message">USB debugging is connected.\USB debugging is not allowed for security.</string>
+    <string name="adb_detect_error_confirm">Confirm</string>
 </resources>
