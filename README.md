@@ -16,7 +16,9 @@ To check it statically, use checkUsbDebuggingMode function.
 
 # Sample Run
 
-![Sample run](sample_run.gif)
+|![Sample run](sample_run.gif)|![Sample run2](sample_run2.gif)|
+|---|---|
+
 
 Sample app shows how ADB Detector works.
 
