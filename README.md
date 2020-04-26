@@ -1,4 +1,4 @@
-# AdbDetector
+# ADB Detector
 
 ![ADB Detector title](adbdetector_title.png)
 
