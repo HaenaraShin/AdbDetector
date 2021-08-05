@@ -12,7 +12,7 @@ To check it dynamically, use a register a BroadcastReceiver.
  
 To check it statically, use checkUsbDebuggingMode function.
 
-**⚠️ADB Detector cannot check ADB itself or ADB via WiFi.⚠️**
+**⚠️ADB Detector cannot check ADB with WiFi.⚠️**
 
 # Sample Run
 
