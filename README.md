@@ -4,6 +4,8 @@
 
 **🕵️ An android library to detect USB Debugging connection.**
 
+📌 자세한 설명은 [블로그](https://haenarashin.github.io/kotlin/2021/12/05/adb_detect.html)에서 확인하실 수 있습니다.
+
 # Introduce
 
 ADB Detector can check USB Debugging is activated both dynamically and statically.
