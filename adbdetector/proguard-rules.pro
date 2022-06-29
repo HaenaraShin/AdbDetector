@@ -19,3 +19,14 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+-dontoptimize
+-dontshrink
+-keepparameternames
+-keepattributes Exceptions,InnerClasses,Signature,Deprecated,SourceFile,LineNumberTable,*Annotation*,EnclosingMethod,MethodParameters,LocalVariableTable,LocalVariableTypeTable
+-dontwarn android.support.v4.**,org.slf4j.**,com.google.android.gms.**
+#noinspection R8IgnoredFlags
+-dontskipnonpubliclibraryclasses
+
+-keep public class net.sleiv.expirychecker.** # keep class name, incl sub class
+-keepclassmembers class * { public static <fields>; public *; } # keep public method name
