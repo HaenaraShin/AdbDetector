@@ -1,34 +1,41 @@
 package dev.haenara.adbdetector.sample
 
-import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
+import android.widget.TextView
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import dev.haenara.adbdetector.AdbDetector
-import dev.haenara.adbdetector.OnAdbUsbListener
-import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var tvState: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        AdbDetector(this).registerAdbDetectReceiver()
 
-        btnDefault.setOnClickListener {
-            AdbDetector(this).unregisterAdbDetectReceiver()
+        tvState = findViewById(R.id.tvState)
+
+        findViewById<Button>(R.id.btnDefault).setOnClickListener {
             AdbDetector(this).registerAdbDetectReceiver()
         }
-        btnCustom.setOnClickListener {
-            AdbDetector(this).unregisterAdbDetectReceiver()
-            AdbDetector(this).registerAdbDetectReceiver(object : OnAdbUsbListener{
-                override fun onAdbUsbConnected(context: Context) {
-                    tvState.text = "Connected"
-                }
 
-                override fun onAdbUsbDisconnected(context: Context) {
+        findViewById<Button>(R.id.btnCustom).setOnClickListener {
+            val detector = AdbDetector(this)
+            Toast.makeText(
+                this,
+                "debug: ${detector.isDebugEnabled()},\nusb: ${detector.isUsbConnected()}",
+                Toast.LENGTH_SHORT
+            ).show()
+
+            detector.registerAdbDetectReceiver(
+                {
+                    tvState.text = "Connected"
+                }, {
                     tvState.text = "Disconnected"
                 }
-            })
+            )
         }
     }
 
