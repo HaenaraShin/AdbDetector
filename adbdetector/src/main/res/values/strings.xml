@@ -1,6 +1,5 @@
 <resources>
-    <string name="app_name">adbdetector</string>
-    <string name="adb_detect_error_title">ADB Detector</string>
-    <string name="adb_detect_error_message">USB debugging is connected.\USB debugging is not allowed for security.</string>
-    <string name="adb_detect_error_confirm">Confirm</string>
+    <string name="adb_detect_default_error_title">ADB Detector</string>
+    <string name="adb_detect_default_error_message">USB debugging is connected.\USB debugging is not allowed for security.</string>
+    <string name="adb_detect_default_error_confirm">Confirm</string>
 </resources>

@@ -6,7 +6,8 @@
         <activity
             android:name=".EmptyActivity"
             android:theme="@style/ErrorTransParentTheme"
-            android:launchMode="singleTop"/>
+            android:launchMode="singleTop"
+            android:exported="true" />
     </application>
 
 </manifest>
